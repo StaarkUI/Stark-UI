@@ -11,6 +11,7 @@ import UiAvatar from "./UIcomponents/UiAvatar";
 import UiCalendar from "./UIcomponents/UiCalendar";
 import UiCard from "./UIcomponents/UiCard";
 import UiCarousel from "./UIcomponents/UiCarousel";
+import UiDataTable from "./UIcomponents/UiDataTable";
 
 
 import {
@@ -19,6 +20,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+
 
 
 const App = () => {
@@ -35,6 +37,7 @@ const App = () => {
           <Route path="uicard" element={<UiCard />} />
           <Route path="uicarousel" element={<UiCarousel />} />
           <Route path="uicalendar" element={<UiCalendar />} />
+          <Route path="uidatatable" element={<UiDataTable />} />
           
 
         </Route>

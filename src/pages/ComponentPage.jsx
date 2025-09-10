@@ -5,7 +5,6 @@ import "./ComponentPage.css";
 const ComponentPage = () => {
   const [searchTerm, setSearchTerm] = useState("")
 
-  // helper function: check if item match kare
   const matches = (item) =>
     item.toLowerCase().includes(searchTerm.toLowerCase())
 
@@ -22,7 +21,6 @@ const ComponentPage = () => {
 
       <h2 className="text-base text-gray-600 font-semibold">Primitives</h2>
 
-      {/* Sidebar list scrollable banega */}
       <ul className="sidebar-list space-y-2 overflow-y-auto flex-1 pr-2">
         <NavLink to ="./uialert">
         <li
@@ -94,13 +92,16 @@ const ComponentPage = () => {
         </li>
         </NavLink>
 
+        <NavLink to="./uidatatable" >
         <li
-          className={`px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
+          className={`mb-2 px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
             matches("Forms") ? "" : "hidden"
           }`}
         >
-          Forms
+          Data Table
         </li>
+        </NavLink>
+
         <li
           className={`px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
             matches("Table") ? "" : "hidden"
