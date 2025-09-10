@@ -17,7 +17,7 @@ const data = [
   { id: 7, name: "Ice cream sandwich", calories: 237, fat: 9.0, carbs: 37, protein: 4.3 },
 ];
 
-const SelectingTable = () => {
+const Selecting_Table = () => {
   const [show, setShow] = useState("component");
   const [copied, setCopied] = useState(false);
 
@@ -381,4 +381,4 @@ export default function SimpleTable() {
   );
 };
 
-export default SelectingTable;
+export default Selecting_Table;
