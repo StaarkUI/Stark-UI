@@ -6,7 +6,7 @@ import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const Date = () => {
+const d = () => {
   const [show, setShow] = useState("component");
   const [copied, setCopied] = useState(false);
 
@@ -370,4 +370,4 @@ export default App;
   );
 };
 
-export default Date;
+export default d;

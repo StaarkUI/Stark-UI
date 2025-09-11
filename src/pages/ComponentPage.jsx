@@ -102,13 +102,16 @@ const ComponentPage = () => {
         </li>
         </NavLink>
 
+        <NavLink to="./uidatepicker">
         <li
-          className={`px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
+          className={`mb-2 px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
             matches("Table") ? "" : "hidden"
           }`}
         >
-          Table
+          Date Picker
         </li>
+        </NavLink>
+
         <li
           className={`px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
             matches("Model") ? "" : "hidden"

@@ -12,6 +12,7 @@ import UiCalendar from "./UIcomponents/UiCalendar";
 import UiCard from "./UIcomponents/UiCard";
 import UiCarousel from "./UIcomponents/UiCarousel";
 import UiDataTable from "./UIcomponents/UiDataTable";
+import UiDatePicker from "./UIcomponents/UiDatePicker";
 
 
 import {
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="uicarousel" element={<UiCarousel />} />
           <Route path="uicalendar" element={<UiCalendar />} />
           <Route path="uidatatable" element={<UiDataTable />} />
+          <Route path="uidatepicker" element={<UiDatePicker />} />
           
 
         </Route>

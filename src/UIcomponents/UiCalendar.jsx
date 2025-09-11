@@ -17,11 +17,15 @@ const UiCalendar = () => {
 
       <div className="mt-10">
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
-          Select Date
+          Date Selector
         </h1>
         <div className="ml-50 border-1 border-gray-300 w-200 h-100 rounded-2xl">
           <SelectDate />
         </div>
+      </div>
+
+      <div className="ml-80 mt-25">
+        <h1 className="font-mono">Built by STARK UI at Vercel. The source code is available on GitHub.</h1>
       </div>
     </div>
   );
