@@ -1,5 +1,7 @@
 import React from "react";
 import BasicInput from "../design/BasicInput";
+import FileInput from "../design/FileInput";
+
 
 const UiInput = () => {
   return (
@@ -11,6 +13,14 @@ const UiInput = () => {
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
             <BasicInput />
+        </div>
+      </div>
+
+      <div>
+        <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">File Input</h1>
+
+        <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
+            <FileInput />
         </div>
       </div>
 
