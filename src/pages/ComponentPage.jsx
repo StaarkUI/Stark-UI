@@ -9,7 +9,7 @@ const ComponentPage = () => {
     item.toLowerCase().includes(searchTerm.toLowerCase())
 
   return (
-    <div className="fixed left-5 top-25 w-55 h-114 bg-gray-200 shadow-2xl rounded-lg p-4 flex flex-col">
+    <div className="fixed left-5 top-25 w-55 h-114  rounded-lg p-4 flex flex-col">
       <h1 className="text-2xl font-bold mb-4">Library</h1>
 
       <input
@@ -112,20 +112,26 @@ const ComponentPage = () => {
         </li>
         </NavLink>
 
+        <NavLink to = "uidropdown">
         <li
-          className={`px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
+          className={`mb-2 px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
             matches("Model") ? "" : "hidden"
           }`}
         >
-          Model
+          Drop Down
         </li>
+        </NavLink>
+        
+        <NavLink to = "uiinput">
         <li
-          className={`px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
+          className={`mb-2 px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
             matches("Tooltip") ? "" : "hidden"
           }`}
         >
-          Tooltip
+          Input
         </li>
+        </NavLink>
+
         <li
           className={`px-5 py-2 rounded-full cursor-pointer bg-gray-300 hover:bg-blue-300 ${
             matches("Dropdown") ? "" : "hidden"
