@@ -11,9 +11,11 @@ const UiDatePicker = () => {
           <SelectDate />
         </div>
       </div>
-      
+
       <div className="ml-80 mt-25">
-        <h1 className="font-mono">Built by STARK UI at Vercel. The source code is available on GitHub.</h1>
+        <h1 className="font-mono">
+          Built by STARK UI at Vercel. The source code is available on GitHub.
+        </h1>
       </div>
     </div>
   );

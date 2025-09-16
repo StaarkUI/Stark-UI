@@ -9,7 +9,6 @@ import RequiredDropDown from "../design/RequiredDropDown";
 import MultiSelectorDropDown from "../design/MultiSelectorDropDown";
 import CheckmarksDropDown from "../design/CheckmarksDropDown";
 
-
 const UiDropDown = () => {
   return (
     <div className="mt-20 ml-40">
@@ -21,7 +20,7 @@ const UiDropDown = () => {
         </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <StanderdDorpDown />
+          <StanderdDorpDown />
         </div>
       </div>
 
@@ -31,7 +30,7 @@ const UiDropDown = () => {
         </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <BasicDropDown />
+          <BasicDropDown />
         </div>
       </div>
 
@@ -41,7 +40,7 @@ const UiDropDown = () => {
         </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <AutoWidth />
+          <AutoWidth />
         </div>
       </div>
 
@@ -51,7 +50,7 @@ const UiDropDown = () => {
         </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <ErrorDropDown />
+          <ErrorDropDown />
         </div>
       </div>
 
@@ -61,17 +60,17 @@ const UiDropDown = () => {
         </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <DisabledDropDown />
+          <DisabledDropDown />
         </div>
       </div>
 
       <div className="mt-10">
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
-          Disabled Drop Down
+          Read Only Drop Down
         </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <ReadOnlyDrapDown />
+          <ReadOnlyDrapDown />
         </div>
       </div>
 
@@ -81,7 +80,7 @@ const UiDropDown = () => {
         </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <RequiredDropDown />
+          <RequiredDropDown />
         </div>
       </div>
 
@@ -91,7 +90,7 @@ const UiDropDown = () => {
         </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <MultiSelectorDropDown />
+          <MultiSelectorDropDown />
         </div>
       </div>
 
@@ -101,7 +100,7 @@ const UiDropDown = () => {
         </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <CheckmarksDropDown />
+          <CheckmarksDropDown />
         </div>
       </div>
 

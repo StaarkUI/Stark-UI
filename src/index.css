@@ -1,2 +1,11 @@
 @import "tailwindcss";
 
+/* Apne global CSS file (index.css ya globals.css) me daalo */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* IE aur Edge ke liye */
+  scrollbar-width: none;     /* Firefox ke liye */
+}

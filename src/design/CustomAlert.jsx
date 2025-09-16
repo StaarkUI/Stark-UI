@@ -135,9 +135,9 @@ export default App;
         {show === "component" ? (
           <MyComponent />
         ) : (
-          <div className="overflow-y-auto pl-6 max-h-78 w-full">
+          <div className="overflow-y-auto scrollbar-hidden pl-6 -mt-2 max-h-81 w-full">
             <div className="rounded-xl relative">
-              <pre className="text-xs whitespace-pre-wrap">
+              <pre className="text-xs -ml-8 -mt-10 whitespace-pre-wrap">
                 <SyntaxHighlighter
                   language="jsx"
                   style={prism}
@@ -148,7 +148,7 @@ export default App;
               </pre>
               <button
                 onClick={handleCopy}
-                className="absolute top-2 right-2 px-3 py-2 hover:bg-gray-200 rounded-md"
+                className="absolute top-2 right-2 px-3 py-2 mt-8 hover:bg-gray-200 rounded-md"
               >
                 {copied ? <TiTick /> : <FaRegCopy />}
               </button>

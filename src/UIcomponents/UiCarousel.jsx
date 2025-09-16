@@ -5,7 +5,7 @@ import MultiCardCarousel from "../design/MultiCardCarousel";
 import MultiCardCarousell from "../design/MultiCardCarousell";
 import MultiCardCarouselll from "../design/MultiCardCarouselll";
 import VarticalCarousel from "../design/VarticalCarousel";
-VarticalCarousel
+VarticalCarousel;
 
 const UiCarousel = () => {
   return (
@@ -20,43 +20,43 @@ const UiCarousel = () => {
         </div>
       </div>
 
-      <div className="mt-15">
+      <div className="mt-10">
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
-          Second type of Single Card Carousel
+          Single Card Carousel V2
         </h1>
         <div className="ml-50 border-1 border-gray-300 w-200 h-100 rounded-2xl">
           <SingleCardCarousel2 />
         </div>
       </div>
 
-      <div className="mt-15">
+      <div className="mt-10">
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
-          multi Card Carousel
+          Multi Card Carousel
         </h1>
         <div className="ml-50 border-1 border-gray-300 w-200 h-100 rounded-2xl">
           <MultiCardCarousell />
         </div>
       </div>
 
-      <div className="mt-15">
+      <div className="mt-10">
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
-          Second type  of Multi Card Carousel
+          Multi Card Carousel V2
         </h1>
         <div className="ml-50 border-1 border-gray-300 w-200 h-100 rounded-2xl">
           <MultiCardCarousel />
         </div>
       </div>
 
-      <div className="mt-15">
+      <div className="mt-10">
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
-          Second type  of Multi Card Carousel
+          Multi Card Carousel V3
         </h1>
         <div className="ml-50 border-1 border-gray-300 w-200 h-100 rounded-2xl">
           <MultiCardCarouselll />
         </div>
       </div>
 
-      <div className="mt-15">
+      <div className="mt-10">
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Vertical Carousel
         </h1>
@@ -66,7 +66,9 @@ const UiCarousel = () => {
       </div>
 
       <div className="ml-80 mt-25">
-        <h1 className="font-mono">Built by STARK UI at Vercel. The source code is available on GitHub.</h1>
+        <h1 className="font-mono">
+          Built by STARK UI at Vercel. The source code is available on GitHub.
+        </h1>
       </div>
     </div>
   );

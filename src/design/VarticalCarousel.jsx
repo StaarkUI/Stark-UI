@@ -185,9 +185,9 @@ export default function VerticalCarousel() {
         {show === "component" ? (
           <VerticalCarousel />
         ) : (
-          <div className="overflow-y-auto pl-6 max-h-78 w-full">
+          <div className="overflow-y-auto scrollbar-hidden pl-6 -mt-2 max-h-81 w-full">
             <div className="rounded-xl relative">
-              <pre className="px-5 text-xs">
+              <pre className="px-5 -ml-8 -mt-4 text-xs">
                 <SyntaxHighlighter
                   language="jsx"
                   style={prism}
@@ -198,7 +198,7 @@ export default function VerticalCarousel() {
               </pre>
               <button
                 onClick={handleCopy}
-                className="absolute top-2 right-2 px-3 py-2 hover:bg-gray-200 rounded-md"
+                className="absolute top-2 right-2 px-3 py-2 mt-8 hover:bg-gray-200 rounded-md"
               >
                 {copied ? <TiTick /> : <FaRegCopy />}
               </button>

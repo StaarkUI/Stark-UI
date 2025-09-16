@@ -1,49 +1,67 @@
 import React, { useState } from "react";
-import { motion } from "motion/react";
 import { FaRegCopy } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const GhostButton = () => {
+const DisabledInput = () => {
   const [show, setShow] = useState("component");
   const [copied, setCopied] = useState(false);
 
-  const MyComponent = () => (
-    <div className="w-180 h-70 flex justify-center items-center">
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 300, damping: 15 }}
-        className="text-balck px-4 py-2 rounded-md
-         hover:bg-gray-100 hover:shadow-md shadow-gray-200"
+  const DisabledInput = () => (
+    <div className="flex justify-center items-center h-70">
+    <div className="w-50 mx-auto p-4">
+      <label
+        htmlFor="disabled-input"
+        className="block text-sm font-medium text-gray-700 mb-1"
       >
-        Ghost
-      </motion.button>
+        Full Name
+      </label>
+
+      <input
+        id="disabledInput"
+        type="text"
+        value="Mr. Stark"
+        disabled
+        className="w-full rounded-md border border-gray-300 bg-gray-100
+          px-3 py-2 text-gray-600 focus:outline-none"
+      />
+
+      <p className="mt-2 text-xs text-gray-500">
+        This field is disabled
+      </p>
+    </div>
     </div>
   );
 
   const componentCode = `
 import React from "react";
 
-const App = () => {
+export default function DisabledInput() {
   return (
-    <div>
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 300, damping: 15 }}
-        className="text-balck px-4 py-2 rounded-md
-         hover:bg-gray-100 hover:shadow-md shadow-gray-200"
+    <div className="w-50 mx-auto p-4">
+      <label
+        htmlFor="disabled-input"
+        className="block text-sm font-medium text-gray-700 mb-1"
       >
-        Ghost
-      </motion.button>
+        Full Name
+      </label>
+
+      <input
+        id="disabledInput"
+        type="text"
+        value="Mr. Stark"
+        disabled
+       className="w-full rounded-md border border-gray-300 bg-gray-100
+        px-3 py-2 text-gray-600 focus:outline-none"
+      />
+
+      <p className="mt-2 text-xs text-gray-500">
+        This field is disabled
+      </p>
     </div>
   );
-};
-
-export default App;
-
+}
   `;
 
   const handleCopy = () => {
@@ -54,7 +72,6 @@ export default App;
 
   return (
     <div className="min-h-screen flex flex-col p-6">
-      {/* Buttons */}
       <div className="flex gap-4">
         <button
           onClick={() => setShow("component")}
@@ -71,10 +88,9 @@ export default App;
         </button>
       </div>
 
-      {/* Preview OR Code */}
       <div className="w-full ">
         {show === "component" ? (
-          <MyComponent />
+          <DisabledInput />
         ) : (
           <div className="overflow-y-auto scrollbar-hidden pl-6 mt-2 max-h-81 w-full">
             <div className="rounded-xl relative">
@@ -101,4 +117,4 @@ export default App;
   );
 };
 
-export default GhostButton;
+export default DisabledInput;

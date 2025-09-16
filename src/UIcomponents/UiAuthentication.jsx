@@ -15,7 +15,7 @@ const UiAuthentication = () => {
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-10">
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Log In
         </h1>

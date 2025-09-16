@@ -11,17 +11,15 @@ const UiAlert = () => {
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Custom Alert
         </h1>
-
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
           <CustomAlert />
         </div>
       </div>
 
-      <div className="mt-15">
+      <div className="mt-10">
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Custom Alert Button
         </h1>
-
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
           <CustomAlertBtn />
         </div>

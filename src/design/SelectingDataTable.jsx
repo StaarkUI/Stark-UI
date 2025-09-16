@@ -107,7 +107,8 @@ const SelectingDataTable = () => {
 
   const emptyRows = rowsPerPage - visibleRows.length;
 
-  const componentCode = `import React from "react";
+  const componentCode = `
+import React from "react";
 import { motion } from "framer-motion";
 import { FiFilter, FiTrash2 } from "react-icons/fi";
 
@@ -230,7 +231,8 @@ export default function App() {
         <div className="flex items-center gap-3">
           {selected.length > 0 ? (
             <button
-              className="flex items-center gap-1 px-3 py-1 rounded bg-red-100 hover:bg-red-200 text-red-700"
+              className="flex items-center gap-1 px-3 py-1 rounded bg-red-100
+               hover:bg-red-200 text-red-700"
               onClick={() => {
                 alert("Delete action (implement as needed)");
                 setSelected([]);
@@ -240,7 +242,8 @@ export default function App() {
               Delete
             </button>
           ) : (
-            <button className="flex items-center gap-1 px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 text-gray-700">
+            <button className="flex items-center gap-1 px-3 py-1 rounded
+             bg-gray-100 hover:bg-gray-200 text-gray-700">
               <FiFilter />
               Filter
             </button>
@@ -579,9 +582,9 @@ export default function App() {
             </div>
           </div>
         ) : (
-          <div className="overflow-y-auto pl-6 max-h-109 w-full">
+          <div className="overflow-y-auto scrollbar-hidden pl-6 -mt-2 max-h-106 w-full">
             <div className="rounded-xl relative">
-              <pre className="px-5 text-xs">
+              <pre className="px-5 -ml-8 -mt-8 text-xs">
                 <SyntaxHighlighter
                   language="jsx"
                   style={prism}
@@ -592,7 +595,7 @@ export default function App() {
               </pre>
               <button
                 onClick={handleCopy}
-                className="absolute top-2 right-2 px-3 py-2 hover:bg-gray-200 rounded-md"
+                className="absolute top-2 right-2 px-3 py-2 mt-8 hover:bg-gray-200 rounded-md"
               >
                 {copied ? <TiTick /> : <FaRegCopy />}
               </button>

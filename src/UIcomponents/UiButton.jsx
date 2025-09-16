@@ -23,7 +23,7 @@ const Button = () => {
         </div>
       </div>
 
-      <div className="mt-15"> 
+      <div className="mt-10"> 
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Secondary
         </h1>
@@ -32,7 +32,7 @@ const Button = () => {
         </div>
       </div>
 
-      <div className="mt-15"> 
+      <div className="mt-10"> 
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Destructive
         </h1>
@@ -41,7 +41,7 @@ const Button = () => {
         </div>
       </div>
 
-      <div className="mt-15"> 
+      <div className="mt-10"> 
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Ghost
         </h1>
@@ -50,7 +50,7 @@ const Button = () => {
         </div>
       </div>
 
-      <div className="mt-15"> 
+      <div className="mt-10"> 
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Link
         </h1>
@@ -60,7 +60,7 @@ const Button = () => {
       </div>
       
 
-       <div className="mt-15"> 
+       <div className="mt-10"> 
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Animated Button
         </h1>
@@ -69,7 +69,7 @@ const Button = () => {
         </div>
       </div>
 
-      <div className="mt-15"> 
+      <div className="mt-10"> 
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
           Glowing Button Text
         </h1>
@@ -78,9 +78,9 @@ const Button = () => {
         </div>
       </div>
 
-      <div className="mt-15"> 
+      <div className="mt-10"> 
         <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
-          Glowing Button Text
+          Ripper Button
         </h1>
         <div className="ml-50 border-1 border-gray-300 w-200 h-100 rounded-2xl">
           <RipperButton />

@@ -1,7 +1,9 @@
 import React from "react";
 import BasicInput from "../design/BasicInput";
 import FileInput from "../design/FileInput";
-
+import DisabledInput from "../design/DisableInput";
+import LabelInput from "../design/LabelInput";
+import ButtonInput from "../design/ButtonInput";
 
 const UiInput = () => {
   return (
@@ -9,18 +11,52 @@ const UiInput = () => {
       <h1 className="ml-50 mt-24 pb-5 text-2xl font-bold">Input</h1>
 
       <div>
-        <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">Basic Input</h1>
+        <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
+          Basic Input
+        </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <BasicInput />
+          <BasicInput />
         </div>
       </div>
 
-      <div>
-        <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">File Input</h1>
+      <div className="mt-10">
+        <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
+          File Input
+        </h1>
 
         <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
-            <FileInput />
+          <FileInput />
+        </div>
+      </div>
+
+      <div className="mt-10">
+        <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
+          Disable Input
+        </h1>
+
+        <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
+          <DisabledInput />
+        </div>
+      </div>
+
+      <div className="mt-10">
+        <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
+          With Label Input
+        </h1>
+
+        <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
+          <LabelInput />
+        </div>
+      </div>
+
+      <div className="mt-10">
+        <h1 className="ml-52 text-xl font-medium text-gray-500 my-4">
+          With Button Input
+        </h1>
+
+        <div className="ml-50 border border-gray-300 w-200 h-100 rounded-2xl">
+          <ButtonInput />
         </div>
       </div>
 

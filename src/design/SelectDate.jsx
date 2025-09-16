@@ -163,7 +163,8 @@ const d = () => {
     );
   };
 
-  const componentCode = `import React, { useState } from "react";
+  const componentCode = `
+import React, { useState } from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
@@ -345,9 +346,9 @@ export default App;
         {show === "component" ? (
           <MyComponent />
         ) : (
-          <div className="overflow-y-auto pl-6 max-h-82 w-full">
+          <div className="overflow-y-auto scrollbar-hidden pl-6 mt-2 max-h-81 w-full">
             <div className="rounded-xl relative">
-              <pre className="px-5 text-xs">
+              <pre className="px-5 -ml-8 -mt-8 text-xs">
                 <SyntaxHighlighter
                   language="jsx"
                   style={prism}
@@ -358,7 +359,7 @@ export default App;
               </pre>
               <button
                 onClick={handleCopy}
-                className="absolute top-2 right-2 px-3 py-2 hover:bg-gray-200 rounded-md"
+                className="absolute top-2 right-2 px-3 py-2 mt-8 hover:bg-gray-200 rounded-md"
               >
                 {copied ? <TiTick /> : <FaRegCopy />}
               </button>
