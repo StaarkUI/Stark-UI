@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -6,17 +6,28 @@ const ComponentPage = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [activeItem, setActiveItem] = useState(null)
 
+  useEffect(() => {
+    const savedItem = localStorage.getItem("activeItem")
+    if (savedItem) {
+      setActiveItem(savedItem)
+    }
+  }, [])
+
+  const handleClick = (item) => {
+    setActiveItem(item)
+    localStorage.setItem("activeItem", item)
+  }
+
   const matches = (item) =>
     item.toLowerCase().includes(searchTerm.toLowerCase())
 
   return (
     <motion.div
-      initial={{ x: -250, opacity: 0 }}   // left se start
-      animate={{ x: 0, opacity: 1 }}      // apni jagah par aa jayega
-      transition={{ type: "spring", stiffness: 70, damping: 20 }} // smooth motion
+      initial={{ x: -250, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 70, damping: 20 }}
       className="fixed left-5 top-25 w-55 h-120 rounded-lg p-4 flex flex-col"
     >
-      {/* Glow Animation */}
       <style>
         {`
           @keyframes glow {
@@ -45,12 +56,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uialert">
           <li
-            onClick={() => setActiveItem("Alert")}
+            onClick={() => handleClick("Alert")}
             className={`px-2 py-2 w-12 rounded-lg cursor-pointer hover:bg-gray-100 ${matches("Alert") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Alert"
-                ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Alert
             </span>
           </li>
@@ -58,12 +69,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uiAuthentication">
           <li
-            onClick={() => setActiveItem("Authentication")}
+            onClick={() => handleClick("Authentication")}
             className={`px-2 py-1 w-29.5 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Authentication") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Authentication"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Authentication
             </span>
           </li>
@@ -71,12 +82,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uiAvatar">
           <li
-            onClick={() => setActiveItem("Avatar")}
+            onClick={() => handleClick("Avatar")}
             className={`px-2 py-1 w-15 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Avatar") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Avatar"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Avatar
             </span>
           </li>
@@ -84,12 +95,12 @@ const ComponentPage = () => {
 
         <NavLink to="./Uibutton">
           <li
-            onClick={() => setActiveItem("Button")}
+            onClick={() => handleClick("Button")}
             className={`px-2 py-1 w-15.5 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Button") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Button"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Button
             </span>
           </li>
@@ -97,12 +108,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uicalendar">
           <li
-            onClick={() => setActiveItem("Calendar")}
+            onClick={() => handleClick("Calendar")}
             className={`px-2 py-1 w-19 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Calendar") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Calendar"
-                ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Calendar
             </span>
           </li>
@@ -110,12 +121,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uicard">
           <li
-            onClick={() => setActiveItem("Card")}
+            onClick={() => handleClick("Card")}
             className={`px-2 py-1 w-12 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Card") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Card"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Card
             </span>
           </li>
@@ -123,12 +134,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uicarousel">
           <li
-            onClick={() => setActiveItem("Carousel")}
+            onClick={() => handleClick("Carousel")}
             className={`px-2 py-1 w-19 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Carousel") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Carousel"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Carousel
             </span>
           </li>
@@ -136,12 +147,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uidatatable">
           <li
-            onClick={() => setActiveItem("Data Table")}
+            onClick={() => handleClick("Data Table")}
             className={`px-2 py-1 w-23 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Data Table") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Data Table"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Data Table
             </span>
           </li>
@@ -149,12 +160,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uidatepicker">
           <li
-            onClick={() => setActiveItem("Date Picker")}
+            onClick={() => handleClick("Date Picker")}
             className={`px-2 py-1 w-24 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Date Picker") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Date Picker"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Date Picker
             </span>
           </li>
@@ -162,12 +173,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uidropdown">
           <li
-            onClick={() => setActiveItem("Drop Down")}
+            onClick={() => handleClick("Drop Down")}
             className={`px-2 py-1 w-25 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Drop Down") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Drop Down"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Drop Down
             </span>
           </li>
@@ -175,12 +186,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uiinput">
           <li
-            onClick={() => setActiveItem("Input1")}
+            onClick={() => handleClick("Input1")}
             className={`px-2 py-1 w-13 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Input1"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Input
             </span>
           </li>
@@ -188,12 +199,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uiinput">
           <li
-            onClick={() => setActiveItem("Input2")}
+            onClick={() => handleClick("Input2")}
             className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Input2"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Input
             </span>
           </li>
@@ -201,12 +212,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uiinput">
           <li
-            onClick={() => setActiveItem("Input3")}
+            onClick={() => handleClick("Input3")}
             className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Input3"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Input
             </span>
           </li>
@@ -214,12 +225,12 @@ const ComponentPage = () => {
 
         <NavLink to="./uiinput">
           <li
-            onClick={() => setActiveItem("Input4")}
+            onClick={() => handleClick("Input4")}
             className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}
           >
             <span className={`${activeItem === "Input4"
-                ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-                : "text-black"}`}>
+              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}`}>
               Input
             </span>
           </li>
