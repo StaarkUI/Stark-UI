@@ -88,7 +88,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <button
               onClick={() => navigate('/component')}

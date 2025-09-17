@@ -1,33 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const ComponentPage = () => {
   const [searchTerm, setSearchTerm] = useState("")
-  const [activeItem, setActiveItem] = useState(null)
-
-  useEffect(() => {
-    const savedItem = localStorage.getItem("activeItem")
-    if (savedItem) {
-      setActiveItem(savedItem)
-    }
-  }, [])
-
-  const handleClick = (item) => {
-    setActiveItem(item)
-    localStorage.setItem("activeItem", item)
-  }
 
   const matches = (item) =>
     item.toLowerCase().includes(searchTerm.toLowerCase())
 
   return (
     <motion.div
-      initial={{ x: -250, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 70, damping: 20 }}
+      initial={{ x: -250, opacity: 0 }}   // left se start
+      animate={{ x: 0, opacity: 1 }}      // apni jagah par aa jayega
+      transition={{ type: "spring", stiffness: 70, damping: 20 }} // smooth motion
       className="fixed left-5 top-25 w-55 h-120 rounded-lg p-4 flex flex-col"
     >
+      {/* Glow Animation */}
       <style>
         {`
           @keyframes glow {
@@ -52,188 +40,146 @@ const ComponentPage = () => {
 
       <h2 className="text-base text-gray-400 font-semibold">Primitives</h2>
 
-      <ul className="space-y-2 overflow-auto scrollbar-hidden flex-1 pr-2">
+      <ul className="space-y-0.5 overflow-auto scrollbar-hidden flex flex-col flex-1 pr-2">
 
-        <NavLink to="./uialert">
-          <li
-            onClick={() => handleClick("Alert")}
-            className={`px-2 py-2 w-12 rounded-lg cursor-pointer hover:bg-gray-100 ${matches("Alert") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Alert"
+        <NavLink to="./uialert" className={`px-2 py-2 w-12 rounded-lg cursor-pointer hover:bg-gray-100 ${matches("Alert") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
               ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+              : "text-black"}>
               Alert
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uiAuthentication">
-          <li
-            onClick={() => handleClick("Authentication")}
-            className={`px-2 py-1 w-29.5 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Authentication") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Authentication"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uiAuthentication" className={`px-2 py-1 w-29.5 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Authentication") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Authentication
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uiAvatar">
-          <li
-            onClick={() => handleClick("Avatar")}
-            className={`px-2 py-1 w-15 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Avatar") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Avatar"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uiAvatar" className={`px-2 py-1 w-15 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Avatar") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Avatar
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./Uibutton">
-          <li
-            onClick={() => handleClick("Button")}
-            className={`px-2 py-1 w-15.5 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Button") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Button"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./Uibutton" className={`px-2 py-1 w-15.5 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Button") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Button
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uicalendar">
-          <li
-            onClick={() => handleClick("Calendar")}
-            className={`px-2 py-1 w-19 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Calendar") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Calendar"
+        <NavLink to="./uicalendar" className={`px-2 py-1 w-19 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Calendar") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
               ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+              : "text-black"}>
               Calendar
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uicard">
-          <li
-            onClick={() => handleClick("Card")}
-            className={`px-2 py-1 w-12 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Card") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Card"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uicard" className={`px-2 py-1 w-12 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Card") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Card
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uicarousel">
-          <li
-            onClick={() => handleClick("Carousel")}
-            className={`px-2 py-1 w-19 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Carousel") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Carousel"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uicarousel" className={`px-2 py-1 w-19 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Carousel") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Carousel
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uidatatable">
-          <li
-            onClick={() => handleClick("Data Table")}
-            className={`px-2 py-1 w-23 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Data Table") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Data Table"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uidatatable" className={`px-2 py-1 w-23 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Data Table") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Data Table
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uidatepicker">
-          <li
-            onClick={() => handleClick("Date Picker")}
-            className={`px-2 py-1 w-24 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Date Picker") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Date Picker"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uidatepicker" className={`px-2 py-1 w-24 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Date Picker") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Date Picker
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uidropdown">
-          <li
-            onClick={() => handleClick("Drop Down")}
-            className={`px-2 py-1 w-25 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Drop Down") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Drop Down"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uidropdown" className={`px-2 py-1 w-25 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Drop Down") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Drop Down
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uiinput">
-          <li
-            onClick={() => handleClick("Input1")}
-            className={`px-2 py-1 w-13 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Input1"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uiinput" className={`px-2 py-1 w-13 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Input
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uiinput">
-          <li
-            onClick={() => handleClick("Input2")}
-            className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Input2"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uiinput" className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Input
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uiinput">
-          <li
-            onClick={() => handleClick("Input3")}
-            className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Input3"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uiinput" className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Input
             </span>
-          </li>
+          )}
         </NavLink>
 
-        <NavLink to="./uiinput">
-          <li
-            onClick={() => handleClick("Input4")}
-            className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}
-          >
-            <span className={`${activeItem === "Input4"
-              ? "text-transparent bg-gradient-to-r  from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
-              : "text-black"}`}>
+        <NavLink to="./uiinput" className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}>
+          {({ isActive }) => (
+            <span className={isActive
+              ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
+              : "text-black"}>
               Input
             </span>
-          </li>
+          )}
         </NavLink>
 
       </ul>
