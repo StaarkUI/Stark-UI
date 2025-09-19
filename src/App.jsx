@@ -15,6 +15,7 @@ import UiDataTable from "./UIcomponents/UiDataTable";
 import UiDatePicker from "./UIcomponents/UiDatePicker";
 import UiDropDown from "./UIcomponents/UiDropDown";
 import UiInput from "./UIcomponents/UiInput";
+import UiInputOTP from "./UIcomponents/UiInputOTP";
 
 
 import {
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="uidatepicker" element={<UiDatePicker />} />
           <Route path="uidropdown" element={<UiDropDown />} />
           <Route path="uiinput" element={<UiInput />} />
+          <Route path="uiinputotp" element={<UiInputOTP />} />
           
 
         </Route>

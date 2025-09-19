@@ -1,4 +1,3 @@
-import { color } from "motion";
 import { motion } from "motion/react";
 import React, { useState } from "react";
 import { FaRegCopy } from "react-icons/fa6";
@@ -6,45 +5,70 @@ import { TiTick } from "react-icons/ti";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const P = () => {
+const DisableInputOTP = () => {
   const [show, setShow] = useState("component");
   const [copied, setCopied] = useState(false);
 
-  const MyComponent = () => (
-    <div className="w-180 h-70 flex justify-center items-center">
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 300, damping: 15 }}
-        className="bg-gray-900 text-white px-4 py-2 rounded-md
-         hover:bg-gray-800 shadow-md shadow-gray-500"
-      >
-        Button
-      </motion.button>
-    </div>
-  );
+  const MyComponent = () => {
+    const otp = ["1", "2", "3", "4"];
 
-  const componentCode = `
+    return (
+      <div className="flex justify-center items-center mt-25">
+        <div className="flex flex-col items-start gap-2 p-6">
+          <div className="flex gap-2">
+            {otp.map((digit, index) => (
+              <input
+                key={index}
+                type="text"
+                value={digit}
+                disabled
+                className="size-10 text-center border rounded-lg text-lg font-medium
+                bg-gray-100 text-gray-500 cursor-not-allowed"
+              />
+            ))}
+          </div>
+
+          <div className="text-sm text-gray-500">
+            OTP value:{" "}
+            <span className="text-md font-medium text-black">
+              {otp.join("")}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+const componentCode = `
 import React from "react";
 
-const App = () => {
+export default function App() {
+  const otp = ["1", "2", "3", "4"];
+
   return (
-    <div>
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 300, damping: 15 }}
-        className="bg-gray-900 text-white px-4 py-2 rounded-md
-         hover:bg-gray-800 shadow-md shadow-gray-500"
-      >
-        Button
-      </motion.button>
+    <div className="flex justify-center items-center">
+      <div className="flex flex-col items-start gap-2 p-6">
+        <div className="flex gap-2">
+          {otp.map((digit, index) => (
+            <input
+              key={index}
+              type="text"
+              value={digit}
+              disabled
+              className="size-10 text-center border rounded-lg text-lg font-medium
+              bg-gray-100 text-gray-500 cursor-not-allowed"
+            />
+          ))}
+        </div>
+
+        <div className="text-sm text-gray-500">
+          OTP value:{" "}
+          <span className="text-md font-medium text-black">{otp.join("")}</span>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default App;
-
+}
   `;
 
   const handleCopy = () => {
@@ -71,8 +95,7 @@ export default App;
         </button>
       </div>
 
-
-      <div className="w-full ">
+      <div className="w-full">
         {show === "component" ? (
           <MyComponent />
         ) : (
@@ -101,4 +124,4 @@ export default App;
   );
 };
 
-export default P;
+export default DisableInputOTP;

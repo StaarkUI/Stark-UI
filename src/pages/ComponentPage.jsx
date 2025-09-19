@@ -10,12 +10,11 @@ const ComponentPage = () => {
 
   return (
     <motion.div
-      initial={{ x: -250, opacity: 0 }}   // left se start
-      animate={{ x: 0, opacity: 1 }}      // apni jagah par aa jayega
-      transition={{ type: "spring", stiffness: 70, damping: 20 }} // smooth motion
+      initial={{ x: -250, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 70, damping: 20 }}
       className="fixed left-5 top-25 w-55 h-120 rounded-lg p-4 flex flex-col"
     >
-      {/* Glow Animation */}
       <style>
         {`
           @keyframes glow {
@@ -152,12 +151,12 @@ const ComponentPage = () => {
           )}
         </NavLink>
 
-        <NavLink to="./uiinput" className={`px-2 py-1 w-30 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}>
+        <NavLink to="./uiinputotp" className={`px-2 py-1 w-22 rounded-md cursor-pointer hover:bg-gray-100 ${matches("Input") ? "" : "hidden"}`}>
           {({ isActive }) => (
             <span className={isActive
               ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text animate-glow"
               : "text-black"}>
-              Input
+              Input OTP
             </span>
           )}
         </NavLink>
